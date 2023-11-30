@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "244988773101",
+    "project_id": "kfupm-app-91695",
+    "storage_bucket": "kfupm-app-91695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244988773101:android:922af48d1ce88bc86042e4",
+        "android_client_info": {
+          "package_name": "com.example.kfupm_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWqiHagHjmhJtyQgRnrpMKjEGNUknF8nY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
