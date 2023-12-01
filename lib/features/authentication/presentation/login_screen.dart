@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_app/features/authentication/presentation/form_field_widget.dart';
+import 'package:kfupm_app/features/home/presentation/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -58,17 +59,21 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                   width: deviceData.width * 0.4,
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex){
+                        return const HomeScreen();
+                      }));
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(19, 128, 65, 1),
+                      ),
+                    ),
+                    child: const Text(
                       'Login',
                       style: TextStyle(
                         color: Color.fromARGB(255, 244, 241, 241),
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromRGBO(19, 128, 65, 1),
                       ),
                     ),
                   )),
