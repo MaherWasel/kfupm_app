@@ -12,15 +12,17 @@ class Sizes {
   static const p48 = 48.0;
   static const p64 = 64.0;
 }
- TextStyle textStyle_lato=GoogleFonts.lato(
-  
- );
- TextStyle largeTextL =textStyle_lato.copyWith(
-  fontSize: Sizes.p32
- );
-  TextStyle midTextL =textStyle_lato.copyWith(
-  fontSize: Sizes.p24
- );
-  TextStyle smallTextL =textStyle_lato.copyWith(
-  fontSize: Sizes.p16
- );
+
+TextStyle textStyle_lato = GoogleFonts.lato();
+TextStyle largeTextL = textStyle_lato.copyWith(
+  fontSize: Sizes.p32,
+  color: const Color.fromARGB(255, 211, 209, 209),
+);
+TextStyle midTextL = textStyle_lato.copyWith(
+  fontSize: Sizes.p24,
+  color: const Color.fromARGB(255, 211, 209, 209),
+);
+TextStyle smallTextL = textStyle_lato.copyWith(
+  fontSize: Sizes.p16,
+  color: const Color.fromARGB(255, 211, 209, 209),
+);
