@@ -44,13 +44,14 @@ class HomePageAppBar extends ConsumerWidget {
                     children: [
                       Text(
                         "WELCOME",
-                        style: midTextL.copyWith(fontWeight: FontWeight.bold),
+                        style: midTextL.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                       ),
                       Text(
                         snapshot.data!['name'],
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
+                        style: midTextL.copyWith(
+                          color: Colors.black
                         ),
                       ),
                     ],

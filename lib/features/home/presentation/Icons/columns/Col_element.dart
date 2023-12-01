@@ -16,7 +16,8 @@ class ColElement extends StatelessWidget{
       padding: const EdgeInsets.all(Sizes.p12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Sizes.p12),
-        color: const Color.fromARGB(62, 158, 158, 158)
+        color: const Color.fromARGB(62, 158, 158, 158),
+        border: Border.all(color: const Color.fromARGB(168, 255, 255, 255))
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,6 +28,7 @@ class ColElement extends StatelessWidget{
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 68, 63, 63),
               borderRadius: BorderRadius.circular(Sizes.p8),
+              border: Border.all(color: Colors.white)
             ),
             child: Icon(icon,color: Colors.white,
             size: Sizes.p48,),

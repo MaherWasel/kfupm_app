@@ -48,6 +48,7 @@ dependencies:
   riverpod_annotation:
   cloud_firestore: ^4.13.3
   firebase_storage: ^11.5.3
+  page_transition: ^2.1.0
 
 dev_dependencies:
   flutter_test:

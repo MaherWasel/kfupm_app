@@ -19,7 +19,7 @@ class Announcments extends ConsumerWidget{
          if (snapshot.hasData){
           
           final data=snapshot.data!["images"];
-          
+          print(data);
           return Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -28,17 +28,7 @@ class Announcments extends ConsumerWidget{
               itemCount: data.length,
               
               itemBuilder: (context,index){
-                (pos?
-                 listViewController.animateTo(
-                  600,
-                  duration: Duration(milliseconds: 6000),
-                  curve: Curves.ease)
-                  :
-                  listViewController.animateTo(
-                  0,
-                  duration: Duration(milliseconds: 6000),
-                  curve: Curves.ease));
-                  pos=!pos;
+                
                 return AnnouncmentElement(imageUrl: data[data.length-1-index]);
               }),
           );
@@ -48,7 +38,7 @@ class Announcments extends ConsumerWidget{
        
        
 
-          return Text("");
+          return Text("alo");
         
       })
 ;  }

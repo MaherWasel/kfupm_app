@@ -22,7 +22,10 @@ class SingleIcon extends StatelessWidget{
       width: width/4,
       decoration: BoxDecoration(
         color: isActive?Color.fromARGB(177, 0, 0, 0):color,
-        borderRadius: BorderRadius.circular(Sizes.p12),
+        
+        borderRadius: BorderRadius.circular(Sizes.p12,),
+        border: Border.all(
+          color: Colors.black,)
       ),
       child:InkWell(
         onTap: ()=>onPress(text),
