@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kfupm_app/features/authentication/data/user.dart';
 import 'package:kfupm_app/features/authentication/presentation/form_field_widget.dart';
 import 'package:kfupm_app/features/home/presentation/home_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
   final _formKey = GlobalKey<FormState>();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     final deviceData = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -60,6 +62,8 @@ class LoginScreen extends StatelessWidget {
                   width: deviceData.width * 0.4,
                   child: ElevatedButton(
                     onPressed: () {
+
+                      ref.read(userRepoProvider);
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex){
                         return const HomeScreen();
                       }));
