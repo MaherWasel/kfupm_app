@@ -11,19 +11,22 @@ class LoginScreen extends ConsumerWidget {
   String email = '';
   String password = '';
 
-  void _saveData(WidgetRef ref, BuildContext context) {
+  void _saveData(WidgetRef ref, BuildContext context) async {
     final isVaild = _formKey.currentState!.validate();
     if (!isVaild) {
       return;
     }
     _formKey.currentState!.save();
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex) {
-      return const HomeScreen();
-    }));
+
     try {
       ref.read(userRepoProvider).login(email: email, password: password);
-    } on FirebaseAuth catch (error) {
-      print("");
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex) {
+        return const HomeScreen();
+      }));
+    } on FirebaseAuthException catch (error) {
+      ScaffoldMessenger.of(context).clearSnackBars();
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(error.message ?? "Authentication Failed")));
     }
   }
 
