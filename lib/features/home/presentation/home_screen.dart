@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget{
     return  Scaffold(
       appBar: HomePageAppBar(),
       bottomNavigationBar: HomePageBottomBar(),
-      body: Column(
+      body: ListView(
         children: [
           SizedBox(
             height: Sizes.p8,

@@ -4,9 +4,12 @@ import 'package:kfupm_app/features/constants/Sizes.dart';
 class SingleIcon extends StatelessWidget{
   final IconData icon;
   final String text;
-  
-  SingleIcon({super.key, required this.icon,required this.text});
-  Color color= const Color.fromARGB(255, 171, 166, 166);
+  final bool isActive;
+  final Function onPress;
+  SingleIcon({required this.onPress, super.key, required this.icon,required this.text ,required this.isActive});
+
+  Color color= Color.fromARGB(157, 171, 166, 166);
+
   @override
   Widget build(BuildContext context) {
     final width=MediaQuery.of(context).size.width;
@@ -18,22 +21,20 @@ class SingleIcon extends StatelessWidget{
       margin: const EdgeInsets.all(Sizes.p8),
       width: width/4,
       decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(Sizes.p12)
+        color: isActive?Color.fromARGB(177, 0, 0, 0):color,
+        borderRadius: BorderRadius.circular(Sizes.p12),
       ),
       child:InkWell(
-        onTap: (){
-        },
+        onTap: ()=>onPress(text),
         child: Expanded(child: 
         
             
           Column(children: [
-            Icon(icon,size: Sizes.p64,),
-            Text(text,style: smallTextL,)
+            Icon(icon,size: Sizes.p64,color: Colors.white,),
+            Text(text,style: smallTextL.copyWith(color: Colors.white),)
           ],)
         ),
       ),
     );
   }
-
 }
