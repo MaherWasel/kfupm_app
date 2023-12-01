@@ -34,7 +34,7 @@ class LoginScreen extends ConsumerWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomeScreen();
+            return const HomeScreen();
           }
           return Scaffold(
             body: SingleChildScrollView(
