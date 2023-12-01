@@ -1,25 +1,34 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kfupm_app/features/authentication/data/user.dart';
 import 'package:kfupm_app/features/authentication/presentation/form_field_widget.dart';
 import 'package:kfupm_app/features/home/presentation/home_screen.dart';
 
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
   final _formKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
 
-  void _saveData(WidgetRef ref) {
+  void _saveData(WidgetRef ref, BuildContext context) {
     final isVaild = _formKey.currentState!.validate();
     if (!isVaild) {
       return;
     }
     _formKey.currentState!.save();
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex) {
+      return const HomeScreen();
+    }));
+    try {
+      ref.read(userRepoProvider).login(email: email, password: password);
+    } on FirebaseAuth catch (error) {
+      print("");
+    }
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    String email = '';
-    String password = '';
-
     final deviceData = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
@@ -100,11 +109,7 @@ class LoginScreen extends ConsumerWidget {
                     width: deviceData.width * 0.4,
                     child: ElevatedButton(
                       onPressed: () {
-                        _saveData(ref);
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (contex) {
-                          return const HomeScreen();
-                        }));
+                        _saveData(ref, context);
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
