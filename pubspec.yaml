@@ -42,10 +42,24 @@ dependencies:
   
   flutter_riverpod: 2.4.6
   google_fonts: ^6.1.0
+  firebase_auth: ^4.15.0
+  riverpod:
+  # the annotation package containing @riverpod
+  riverpod_annotation:
+  cloud_firestore: ^4.13.3
+  firebase_storage: ^11.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # a tool for running code generators
+  build_runner:
+  # the code generator
+  riverpod_generator:
+  # riverpod_lint makes it easier to work with Riverpod
+  riverpod_lint:
+  # import custom_lint too as riverpod_lint depends on it
+  custom_lint:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
