@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     } else {
       setState(() {
-        content = CameraScreen();
+        content = QRScannerScreen();
       });
     }
   }
