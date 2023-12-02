@@ -50,19 +50,27 @@ class _IconWidgetState extends State<IconWidget> {
   Widget build(BuildContext context) {
    
 
-    return Column(
-      children: [
-        RowOfIcon(
-          violationIsActive: violationIsActive,
-          academicIsActive: academicIsActive,
-          bookingIsActive: bookingIsActive,
-          onPress: pressed,
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 249, 247, 247),
+        borderRadius: BorderRadius.only
+        (topLeft: Radius.circular(35),
+        topRight: Radius.circular(35),)
+      ),
+      child: Column(
+        children: [
+          RowOfIcon(
+            violationIsActive: violationIsActive,
+            academicIsActive: academicIsActive,
+            bookingIsActive: bookingIsActive,
+            onPress: pressed,
+            
+          ),
+          content
           
-        ),
-        content
-        
-
-      ],
+      
+        ],
+      ),
     );
   }
 }

@@ -7,7 +7,7 @@ class BookingColumn extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(
+    return const Column(
       children: [
         ColElement(icon: Icons.sports_esports, text: "BOULEVARD"),
         ColElement(icon: Icons.umbrella, text: "KFUPM BEACH"),

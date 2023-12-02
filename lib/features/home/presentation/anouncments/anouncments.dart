@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kfupm_app/features/home/data/homeRepo.dart';
 import 'package:kfupm_app/features/home/presentation/anouncments/anouncment_element.dart';
 
-class Announcments extends ConsumerWidget{
+class Announcments extends ConsumerWidget {
   bool pos=false;
   final listViewController = ScrollController();
   @override
@@ -14,15 +14,16 @@ class Announcments extends ConsumerWidget{
       stream: ref.read(homeRepoProvider).getAnouncments(), 
       builder: (context,snapshot){
         if (snapshot.connectionState==ConnectionState.waiting){
-          return Center(child: CircularProgressIndicator());
+          return const Center(
+            child: CircularProgressIndicator());
         }
          if (snapshot.hasData){
           
           final data=snapshot.data!["images"];
-          print(data);
           return Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
+              addRepaintBoundaries: true,
               addAutomaticKeepAlives: true,
               controller: listViewController,
               itemCount: data.length,
@@ -38,7 +39,7 @@ class Announcments extends ConsumerWidget{
        
        
 
-          return Text("alo");
+          return const Text("failed");
         
       })
 ;  }

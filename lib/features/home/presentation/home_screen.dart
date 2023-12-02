@@ -16,16 +16,8 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         height: deviceData.height,
         width: deviceData.width,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(147, 128, 50, 1),
-              Color.fromRGBO(14, 95, 50, 1),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        color:Color.fromRGBO(3, 84, 38, 1),
+
         child: ListView(
         children: [
           HomePageAppBar(),

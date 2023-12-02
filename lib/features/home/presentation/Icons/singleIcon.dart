@@ -8,7 +8,7 @@ class SingleIcon extends StatelessWidget{
   final Function onPress;
   SingleIcon({required this.onPress, super.key, required this.icon,required this.text ,required this.isActive});
 
-  Color color= Color.fromARGB(157, 171, 166, 166);
+  Color color= Color.fromARGB(157, 240, 238, 238);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SingleIcon extends StatelessWidget{
       margin: const EdgeInsets.all(Sizes.p8),
       width: width/4,
       decoration: BoxDecoration(
-        color: isActive?Color.fromARGB(177, 0, 0, 0):color,
+        color: isActive?Color.fromARGB(255, 5, 48, 19):color,
         
         borderRadius: BorderRadius.circular(Sizes.p12,),
         border: Border.all(
@@ -33,8 +33,13 @@ class SingleIcon extends StatelessWidget{
         
             
           Column(children: [
-            Icon(icon,size: Sizes.p64,color: Colors.white,),
-            Text(text,style: smallTextL.copyWith(color: Colors.white),)
+            Icon(icon,size: Sizes.p64,color: Color.fromARGB(255, 166, 189, 177),),
+            Text(text,style: smallTextL.copyWith(
+              color: isActive ? Colors.white: Color.fromARGB(255, 1, 58, 3),
+              fontWeight: FontWeight.bold
+              
+          ),
+            )
           ],)
         ),
       ),
