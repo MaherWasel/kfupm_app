@@ -25,7 +25,10 @@ class ViolationColumn extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => DormsVailoationsScreen()));
             },
-            child: ColElement(icon: Icons.home, text: "DOORMS VIOLATIONS"))
+            child: ColElement(
+              icon: Icons.home,
+              text: "DOORMS VIOLATIONS",
+            ))
       ],
     );
   }
