@@ -6,6 +6,8 @@ import 'package:kfupm_app/features/home/presentation/Icons/services/GPA/GPA_drop
 import 'package:kfupm_app/features/home/presentation/Icons/services/GPA/GPA_widget.dart';
 
 class GradesAndGpa extends ConsumerWidget {
+  const GradesAndGpa({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(gpaScreenControllerProvider);
@@ -14,7 +16,7 @@ class GradesAndGpa extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        color: Color.fromARGB(255, 9, 83, 11),
+        color: const Color.fromARGB(255, 9, 83, 11),
         child: ListView(
           children: [
             const SizedBox(
@@ -35,18 +37,17 @@ class GradesAndGpa extends ConsumerWidget {
             const Divider(),
             // controller.semester.isNotEmpty?PUT WIDGET HERE:null,
             controller.semester.isEmpty?
-            Text("Empty"):
+            const Text("Empty"):
             Expanded(
               child: ListView.builder(
                 itemCount: controller.subjects.length,
                 itemBuilder: (context,index){
                   final subject = controller.subjects[index].subject;
                   final grade=controller.subjects[index].grade;
-                  print(subject);
                   return Container(
                     width: deviceSizes.width/2,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 6, 75, 8),
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 6, 75, 8),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(35),
                         bottomRight: Radius.circular(35),
@@ -56,8 +57,8 @@ class GradesAndGpa extends ConsumerWidget {
                     ),
                     child: Row(
                       children: [
-                        Text(subject,style: TextStyle(
-                          color: Colors.black
+                        Text(subject,style: const TextStyle(
+                          
                         ),),
                         Text(grade)
                       ],

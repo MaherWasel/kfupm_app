@@ -5,6 +5,7 @@ import 'package:kfupm_app/features/authentication/data/user.dart';
 import 'package:kfupm_app/features/constants/Sizes.dart';
 import 'package:kfupm_app/features/home/presentation/Icons/columns/Col_element.dart';
 import 'package:kfupm_app/features/home/presentation/Icons/services/housing_contract.dart';
+import 'package:kfupm_app/features/home/presentation/services/idCard.dart';
 import 'package:kfupm_app/features/home/presentation/services/id_component.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -39,7 +40,7 @@ class ExtraServices extends ConsumerWidget{
                 child: ListView(
                   children:  [
                     InkWell(
-                      onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>IdComponent())),
+                      onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>IdCard())),
                       child: const ColElement(icon: Icons.credit_card, text: "Show ID")),
                     const ColElement(icon: Icons.phone, text: "Kfupm Numbers"),
                     InkWell(
