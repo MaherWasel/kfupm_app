@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kfupm_app/features/attendance/attendance_screen_controller.dart';
 
 class SemesterDropDown extends ConsumerWidget {
   @override
@@ -9,7 +10,7 @@ class SemesterDropDown extends ConsumerWidget {
     final List<String> semesters = ['Term 222', 'Term 223', 'Term 231'];
 
     //getting the controller
-    // final controller = ref.watch(attendaceScreenControllerProvider.notifier);
+    final controller = ref.read(attendanceScreenControllerProvider.notifier);
 
     return Center(
       child: Container(
@@ -18,12 +19,11 @@ class SemesterDropDown extends ConsumerWidget {
           children: [
             DropdownMenu(
               width: (2 / 3) * MediaQuery.of(context).size.width,
-
               label: const Text('Semester'),
               onSelected: (value) {
                 if (value != null) {
-                  //show table based on the semester
-                  // call function from contorller
+                  print('reached here');
+                  controller.updateSemester(value);
                 }
               },
 

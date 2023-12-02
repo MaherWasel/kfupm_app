@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_app/features/attendance/subject_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:kfupm_app/features/attendance/attendance_screen_controller.dart';
 
 part 'attendance_screen_controller.g.dart';
 
 @riverpod
 class AttendanceScreenController extends _$AttendanceScreenController {
+  String semesterNum = '';
+
   @override
   FutureOr<void> build() {}
 
+  void updateSemester(String newSemester) {
+    state = const AsyncValue.loading();
+    semesterNum = newSemester;
+    state = const AsyncValue.data(null);
+  }
+
   //Get subjects corresponding to semester from firebase
-  List<SubjectModel> getSubjects(String semesterNum) {
+  List<SubjectModel> getSubjects() {
     switch (semesterNum) {
       case 'Term 222':
+        print('222');
         SubjectModel math201 = SubjectModel(
             name: 'MATH201', section: 01, absences: 0, lates: 1, excuses: 0);
         SubjectModel engl102 = SubjectModel(
@@ -26,6 +36,7 @@ class AttendanceScreenController extends _$AttendanceScreenController {
         return [math201, engl102, phys102, ise291, coe292];
 
       case 'Term 223':
+        print('reached');
         SubjectModel engl214 = SubjectModel(
             name: 'ENGL102', section: 02, absences: 1, lates: 1, excuses: 0);
         SubjectModel ics253 = SubjectModel(
@@ -45,19 +56,23 @@ class AttendanceScreenController extends _$AttendanceScreenController {
 
       default:
         SubjectModel def = SubjectModel(
-            name: 'ERR404', section: -1, absences: -1, lates: -1, excuses: -1);
+            name: 'EMPTY101',
+            section: -1,
+            absences: -1,
+            lates: -1,
+            excuses: -1);
         return [def];
     }
   }
 
   //Formats list of subjects into a list of data rows
-  List<DataRow> getData(String semesterNum) {
+  List<DataRow> getData() {
     List<DataRow> data = [];
 
     //get list of subjects
-    final dataRows = getSubjects(semesterNum);
+    List<SubjectModel> subjects = getSubjects();
 
-    dataRows.forEach((element) {
+    subjects.forEach((element) {
       data.add(DataRow(
         cells: <DataCell>[
           DataCell(Text(element.name)),
