@@ -7,7 +7,7 @@ part of 'attendance_screen_controller.dart';
 // **************************************************************************
 
 String _$attendanceScreenControllerHash() =>
-    r'ef1bfa528b883b5dafb47834213cb39619f75200';
+    r'0f1231e80002a61603f1ebd400f39ea143d2be91';
 
 /// See also [AttendanceScreenController].
 @ProviderFor(AttendanceScreenController)
