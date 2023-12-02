@@ -7,8 +7,8 @@ import 'package:kfupm_app/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
   runApp(const ProviderScope(
-    child: MaterialApp(home:  StartingAppScreen()),
+    child: MaterialApp(home: StartingAppScreen()),
   ));
 }
