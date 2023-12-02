@@ -12,10 +12,15 @@ class GpaWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+            ),
             color: const Color.fromARGB(255, 16, 78, 18),
             child: Column(
               children: [
-                const Text('GPA & Badge'),
+                Container(
+                    padding: EdgeInsets.all(8),
+                    child: const Text('GPA & Badge')),
                 Text(
                   '$gpa',
                   style: TextStyle(
