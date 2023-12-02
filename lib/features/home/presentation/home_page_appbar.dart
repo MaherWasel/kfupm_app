@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kfupm_app/features/constants/Sizes.dart';
 import 'package:kfupm_app/features/home/presentation/calender._screen.dart';
+import 'package:kfupm_app/features/home/presentation/services/id_component.dart';
 
 class HomePageAppBar extends ConsumerWidget {
   HomePageAppBar({super.key});
@@ -62,18 +63,28 @@ class HomePageAppBar extends ConsumerWidget {
                     ],
                   ),
                 ),
-                CircleAvatar(
-                  child: Text(
-                    snapshot.data!['name'].toUpperCase().substring(
-                        0, 1), // Replace with the desired letter or character
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              IdComponent()), // Replace NextScreen() with the target screen widget
+                    );
+                  },
+                  child: CircleAvatar(
+                    child: Text(
+                      snapshot.data!['name'].toUpperCase().substring(
+                          0, 1), // Replace with the desired letter or character
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    backgroundColor: Color.fromARGB(255, 46, 139, 88),
+                    // Replace with the desired background color
                   ),
-                  backgroundColor: Color.fromARGB(255, 46, 139, 88),
-// Replace with the desired background color
                 ),
               ],
             ),
