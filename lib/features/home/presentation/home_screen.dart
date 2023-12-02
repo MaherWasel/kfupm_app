@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
-=======
 import 'package:kfupm_app/features/attendance/attendance_screen.dart';
->>>>>>> Stashed changes
 import 'package:kfupm_app/features/constants/Sizes.dart';
 import 'package:kfupm_app/features/home/presentation/Icons/iconWidgets.dart';
 import 'package:kfupm_app/features/home/presentation/anouncments/anouncments.dart';
@@ -35,11 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     else {
       setState(() {
-<<<<<<< Updated upstream
-        content=Text("alo");
-=======
         content=AttendanceScreen();
->>>>>>> Stashed changes
       });
     }
   }
