@@ -30,6 +30,7 @@ class GPASemesterDropDown extends ConsumerWidget {
                 if (value != null) {
                   controller.semester = value;
                   controller.updateGPA();
+                  controller.updateSubjects();
                 }
               },
 

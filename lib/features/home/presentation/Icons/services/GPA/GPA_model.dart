@@ -1,6 +1,6 @@
 class GpaModel {
-  final Subject;
+  final subject;
   final grade;
 
-  GpaModel({required this.Subject, required this.grade});
+  GpaModel({required this.subject, required this.grade});
 }

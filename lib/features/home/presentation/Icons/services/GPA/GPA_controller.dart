@@ -33,40 +33,43 @@ class GpaScreenController extends _$GpaScreenController {
   }
 
   void updateSubjects() {
+        state = const AsyncValue.loading();
+
     switch (semester) {
       case 'Semester 222':
         subjects = [
-          GpaModel(Subject: 'MATH201', grade: 'C+'),
-          GpaModel(Subject: 'PHYS102', grade: 'B'),
-          GpaModel(Subject: 'ICS104', grade: 'A+'),
-          GpaModel(Subject: 'IAS101', grade: 'A+')
+          GpaModel(subject: 'MATH201', grade: 'C+'),
+          GpaModel(subject: 'PHYS102', grade: 'B'),
+          GpaModel(subject: 'ICS104', grade: 'A+'),
+          GpaModel(subject: 'IAS101', grade: 'A+')
         ];
         break;
 
       case 'Semester 223':
         subjects = [
-          GpaModel(Subject: 'ISE291', grade: 'A+'),
-          GpaModel(Subject: 'COE292', grade: 'A'),
+          GpaModel(subject: 'ISE291', grade: 'A+'),
+          GpaModel(subject: 'COE292', grade: 'A'),
         ];
         break;
 
       case 'Semester 231':
         subjects = [
-          GpaModel(Subject: 'COE202', grade: 'D+'),
-          GpaModel(Subject: 'COE203', grade: 'F'),
-          GpaModel(Subject: 'IAS212', grade: 'F'),
-          GpaModel(Subject: 'ICS253', grade: 'D'),
+          GpaModel(subject: 'COE202', grade: 'D+'),
+          GpaModel(subject: 'COE203', grade: 'F'),
+          GpaModel(subject: 'IAS212', grade: 'F'),
+          GpaModel(subject: 'ICS253', grade: 'D'),
         ];
         break;
 
       default:
         subjects = [
-          GpaModel(Subject: 'ISE291', grade: 'A+'),
-          GpaModel(Subject: 'COE292', grade: 'A'),
-          GpaModel(Subject: 'ICS104', grade: 'A+'),
-          GpaModel(Subject: 'IAS101', grade: 'A+')
+          GpaModel(subject: 'ISE291', grade: 'A+'),
+          GpaModel(subject: 'COE292', grade: 'A'),
+          GpaModel(subject: 'ICS104', grade: 'A+'),
+          GpaModel(subject: 'IAS101', grade: 'A+')
         ];
     }
+    state = const AsyncValue.data(null);
   }
   //
 }
