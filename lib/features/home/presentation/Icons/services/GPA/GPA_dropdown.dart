@@ -23,6 +23,7 @@ class GPASemesterDropDown extends ConsumerWidget {
         child: Column(
           children: [
             DropdownMenu(
+              
               width: (2 / 3) * MediaQuery.of(context).size.width,
               label: const Text('Semester'),
               onSelected: (value) {

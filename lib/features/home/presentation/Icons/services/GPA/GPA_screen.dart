@@ -14,7 +14,7 @@ class GradesAndGpa extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        margin: const EdgeInsets.all(Sizes.p12),
+        color: Color.fromARGB(255, 9, 83, 11),
         child: ListView(
           children: [
             const SizedBox(
