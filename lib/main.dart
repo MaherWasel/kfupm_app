@@ -9,6 +9,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
   runApp(const ProviderScope(
-    child: MaterialApp(home: StartingAppScreen()),
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: StartingAppScreen()),
   ));
 }
