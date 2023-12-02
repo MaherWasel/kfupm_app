@@ -39,7 +39,7 @@ class ExtraServices extends ConsumerWidget{
                   children:  [
                     InkWell(
                       onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>IdComponent())),
-                      child: ColElement(icon: Icons.credit_card, text: "Show ID")),
+                      child: const ColElement(icon: Icons.credit_card, text: "Show ID")),
                     const ColElement(icon: Icons.phone, text: "Kfupm Numbers"),
                     const ColElement(icon: Icons.home, text: "Housing Contract"),
                     const ColElement(icon: Icons.car_rental_outlined, text: "Vehicle Sticker"),
@@ -48,7 +48,7 @@ class ExtraServices extends ConsumerWidget{
                       onTap: (){
                           ref.read(userRepoProvider).signOut();
                       },
-                      child: ColElement(icon: Icons.logout, text: "LogOut"))
+                      child: const ColElement(icon: Icons.logout, text: "LogOut"))
 
                     ],
                 ),

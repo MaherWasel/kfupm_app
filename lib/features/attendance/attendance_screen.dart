@@ -13,22 +13,25 @@ class AttendanceScreen extends ConsumerWidget {
     final state = ref.watch(attendanceScreenControllerProvider);
     final controller = ref.read(attendanceScreenControllerProvider.notifier);
 
-    return  Column(
-        children: [
-          SemesterDropDown(),
-          FittedBox(
-            child: DataTable(
-              columns: const <DataColumn>[
-                DataColumn(label: Text('Subject')),
-                DataColumn(label: Text('Section')),
-                DataColumn(label: Text('Absences')),
-                DataColumn(label: Text('Lates')),
-                DataColumn(label: Text('Excuses')),
-              ],
-              rows: controller.getData(),
-            ),
-          )
-        ],);
+    return  Scaffold(
+      appBar: AppBar(),
+      body: Column(
+          children: [
+            SemesterDropDown(),
+            FittedBox(
+              child: DataTable(
+                columns: const <DataColumn>[
+                  DataColumn(label: Text('Subject')),
+                  DataColumn(label: Text('Section')),
+                  DataColumn(label: Text('Absences')),
+                  DataColumn(label: Text('Lates')),
+                  DataColumn(label: Text('Excuses')),
+                ],
+                rows: controller.getData(),
+              ),
+            )
+          ],),
+    );
       
   }
 }

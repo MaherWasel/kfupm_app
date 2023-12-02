@@ -30,7 +30,7 @@ class ColElement extends StatelessWidget{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
+          SizedBox(
             height: height/11,
             width: Sizes.p64,
             
@@ -39,7 +39,8 @@ class ColElement extends StatelessWidget{
           ),
           Text(text.toUpperCase(),style: midTextL.copyWith(
             color: Colors.white,
-            fontWeight: FontWeight.bold),),
+            fontWeight: FontWeight.bold,
+            overflow: TextOverflow.ellipsis),),
           const SizedBox(
             width: Sizes.p12,
           )
