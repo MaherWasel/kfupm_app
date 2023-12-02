@@ -27,31 +27,36 @@ class HomePageAppBar extends ConsumerWidget {
             child: Row(
               children: [
                 IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const CalenderScreen()), // Replace NextScreen() with the target screen widget
-                      );
-                    },
-                    icon: const Icon(
-                      Icons.calendar_month,
-                      size: Sizes.p32,
-                    )),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const CalenderScreen()), // Replace NextScreen() with the target screen widget
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.calendar_month,
+                    size: Sizes.p32,
+                  ),
+                  color: const Color.fromARGB(255, 245, 241, 241),
+                ),
                 Expanded(
                   child: Column(
                     children: [
                       Text(
                         "WELCOME",
                         style: midTextL.copyWith(
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: const Color.fromARGB(255, 245, 241, 241),
+                        ),
                       ),
                       Text(
                         snapshot.data!['name'],
                         style: midTextL.copyWith(
-                          color: Colors.black
+                          fontSize: 24,
+                          color: const Color.fromARGB(255, 245, 241, 241),
                         ),
                       ),
                     ],
@@ -67,8 +72,8 @@ class HomePageAppBar extends ConsumerWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  backgroundColor:
-                      Colors.blue, // Replace with the desired background color
+                  backgroundColor: Color.fromARGB(255, 46, 139, 88),
+// Replace with the desired background color
                 ),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_app/features/attendance/attendance_screen.dart';
+import 'package:kfupm_app/features/attendance/cameraScreen.dart';
 import 'package:kfupm_app/features/constants/Sizes.dart';
 import 'package:kfupm_app/features/home/presentation/Icons/iconWidgets.dart';
 import 'package:kfupm_app/features/home/presentation/anouncments/anouncments.dart';
@@ -16,37 +17,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-    Widget content =HomeContent();
-  void controller(int index){
-    if (index==0){
+  Widget content = HomeContent();
+  void controller(int index) {
+    if (index == 0) {
       setState(() {
-        content=ExtraServices();
+        content = ExtraServices();
       });
-    }
-
-    else if (index==1){
+    } else if (index == 1) {
       setState(() {
-              content=HomeContent();
-
+        content = HomeContent();
       });
-    }
-    else {
+    } else {
       setState(() {
-        content=AttendanceScreen();
+        content = CameraScreen();
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
-        final deviceData = MediaQuery.of(context).size;
-
+    final deviceData = MediaQuery.of(context).size;
 
     return Scaffold(
-      bottomNavigationBar: HomePageBottomBar(controller:controller),
+      bottomNavigationBar: HomePageBottomBar(controller: controller),
       body: content,
     );
   }
 }
-
-
-
