@@ -12,7 +12,7 @@ class GradesAndGpa extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(gpaScreenControllerProvider);
     final controller = ref.read(gpaScreenControllerProvider.notifier);
-    final deviceSizes=MediaQuery.of(context).size;
+    final deviceSizes = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
       body: Container(
@@ -35,6 +35,36 @@ class GradesAndGpa extends ConsumerWidget {
                   )
                 : const Spacer(),
             const Divider(),
+            controller.semester.isEmpty
+                ? Text("Empty")
+                : Expanded(
+                    child: ListView.builder(
+                        itemCount: controller.subjects.length,
+                        itemBuilder: (context, index) {
+                          final subject = controller.subjects[index].subject;
+                          final grade = controller.subjects[index].grade;
+                          print(subject);
+                          return Container(
+                            width: deviceSizes.width / 2,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 6, 75, 8),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(35),
+                                    bottomRight: Radius.circular(35),
+                                    bottomLeft: Radius.circular(7),
+                                    topRight: Radius.circular(7))),
+                            child: Row(
+                              children: [
+                                Text(
+                                  subject,
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                Text(grade)
+                              ],
+                            ),
+                          );
+                        }),
+                  )
             // controller.semester.isNotEmpty?PUT WIDGET HERE:null,
             controller.semester.isEmpty?
             const Text("Empty"):

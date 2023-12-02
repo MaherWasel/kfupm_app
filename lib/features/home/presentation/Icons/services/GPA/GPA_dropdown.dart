@@ -7,7 +7,6 @@ class GPASemesterDropDown extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     //Get list of semesters from firebase
-    //For now its hardcoded
     final List<String> semesters = [
       'Semester 222',
       'Semester 223',
@@ -23,7 +22,6 @@ class GPASemesterDropDown extends ConsumerWidget {
         child: Column(
           children: [
             DropdownMenu(
-              
               width: (2 / 3) * MediaQuery.of(context).size.width,
               label: const Text('Semester'),
               onSelected: (value) {
@@ -36,7 +34,7 @@ class GPASemesterDropDown extends ConsumerWidget {
 
               //the enteries of the drop menu that we got from firebase
               dropdownMenuEntries:
-                  //change ports
+                  //fill in the drop menu items
                   semesters.map<DropdownMenuEntry<String>>((String value) {
                 return DropdownMenuEntry<String>(value: value, label: value);
               }).toList(),
