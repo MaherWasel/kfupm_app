@@ -66,36 +66,8 @@ class GradesAndGpa extends ConsumerWidget {
                         }),
                   )
             // controller.semester.isNotEmpty?PUT WIDGET HERE:null,
-            controller.semester.isEmpty?
-            const Text("Empty"):
-            Expanded(
-              child: ListView.builder(
-                itemCount: controller.subjects.length,
-                itemBuilder: (context,index){
-                  final subject = controller.subjects[index].subject;
-                  final grade=controller.subjects[index].grade;
-                  return Container(
-                    width: deviceSizes.width/2,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 6, 75, 8),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(35),
-                        bottomRight: Radius.circular(35),
-                        bottomLeft: Radius.circular(7),
-                        topRight: Radius.circular(7)
-                      )
-                    ),
-                    child: Row(
-                      children: [
-                        Text(subject,style: const TextStyle(
-                          
-                        ),),
-                        Text(grade)
-                      ],
-                    ),
-                  );
-              }),
-            )
+            
+            
           ],
         ),
       ),
