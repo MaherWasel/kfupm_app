@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:kfupm_app/features/attendance/attendance_screen.dart';
 import 'package:kfupm_app/features/attendance/cameraScreen.dart';
-import 'package:kfupm_app/features/constants/Sizes.dart';
-import 'package:kfupm_app/features/home/presentation/Icons/iconWidgets.dart';
-import 'package:kfupm_app/features/home/presentation/anouncments/anouncments.dart';
 import 'package:kfupm_app/features/home/presentation/services/extraServices.dart';
 import 'package:kfupm_app/features/home/presentation/home_content.dart';
-import 'package:kfupm_app/features/home/presentation/home_page_appBar.dart';
+
 import 'package:kfupm_app/features/home/presentation/home_page_bottomBar.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget  {
   const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
+// StateFull for rebuilding the content the main content in the main screen
 class _HomeScreenState extends State<HomeScreen> {
-  Widget content = HomeContent();
+  Widget content = const HomeContent();
   void controller(int index) {
     if (index == 0) {
       setState(() {
@@ -25,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     } else if (index == 1) {
       setState(() {
-        content = HomeContent();
+        content = const HomeContent();
       });
     } else {
       setState(() {

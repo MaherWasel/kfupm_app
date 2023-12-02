@@ -2,8 +2,11 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePageBottomBar extends StatelessWidget {
+  //  index 1 represenet the home screen which is the main
+
   int index_ = 1;
   final Function controller;
+  // takes the function of changing the input of the bottom navigator
   HomePageBottomBar({required this.controller,super.key});
   @override
   Widget build(BuildContext context) {

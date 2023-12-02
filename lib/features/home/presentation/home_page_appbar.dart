@@ -8,11 +8,13 @@ import 'package:kfupm_app/features/home/presentation/services/id_component.dart'
 
 class HomePageAppBar extends ConsumerWidget {
   HomePageAppBar({super.key});
+  //  only the auth users would be inside this screen
   final authUser = FirebaseAuth.instance.currentUser!;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return StreamBuilder(
+      
         stream: FirebaseFirestore.instance
             .collection("students")
             .doc(FirebaseAuth.instance.currentUser!.uid)
@@ -23,7 +25,7 @@ class HomePageAppBar extends ConsumerWidget {
                 width: double.infinity, child: CircularProgressIndicator());
           }
           return Container(
-            margin: EdgeInsets.all(Sizes.p32),
+            margin: const EdgeInsets.all(Sizes.p32),
             color: Colors.transparent,
             child: Row(
               children: [
@@ -73,16 +75,16 @@ class HomePageAppBar extends ConsumerWidget {
                     );
                   },
                   child: CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 46, 139, 88),
                     child: Text(
                       snapshot.data!['name'].toUpperCase().substring(
                           0, 1), // Replace with the desired letter or character
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    backgroundColor: Color.fromARGB(255, 46, 139, 88),
                     // Replace with the desired background color
                   ),
                 ),

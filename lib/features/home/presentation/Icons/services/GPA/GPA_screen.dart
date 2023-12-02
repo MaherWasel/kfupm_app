@@ -6,15 +6,17 @@ import 'package:kfupm_app/features/home/presentation/Icons/services/GPA/GPA_drop
 import 'package:kfupm_app/features/home/presentation/Icons/services/GPA/GPA_widget.dart';
 
 class GradesAndGpa extends ConsumerWidget {
+  const GradesAndGpa({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(gpaScreenControllerProvider);
     final controller = ref.read(gpaScreenControllerProvider.notifier);
-
+    final deviceSizes = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        margin: const EdgeInsets.all(Sizes.p12),
+        color: const Color.fromARGB(255, 9, 83, 11),
         child: ListView(
           children: [
             const SizedBox(
@@ -33,7 +35,39 @@ class GradesAndGpa extends ConsumerWidget {
                   )
                 : const Spacer(),
             const Divider(),
+            controller.semester.isEmpty
+                ? Text("Empty")
+                : Expanded(
+                    child: ListView.builder(
+                        itemCount: controller.subjects.length,
+                        itemBuilder: (context, index) {
+                          final subject = controller.subjects[index].subject;
+                          final grade = controller.subjects[index].grade;
+                          print(subject);
+                          return Container(
+                            width: deviceSizes.width / 2,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 6, 75, 8),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(35),
+                                    bottomRight: Radius.circular(35),
+                                    bottomLeft: Radius.circular(7),
+                                    topRight: Radius.circular(7))),
+                            child: Row(
+                              children: [
+                                Text(
+                                  subject,
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                Text(grade)
+                              ],
+                            ),
+                          );
+                        }),
+                  )
             // controller.semester.isNotEmpty?PUT WIDGET HERE:null,
+            
+            
           ],
         ),
       ),

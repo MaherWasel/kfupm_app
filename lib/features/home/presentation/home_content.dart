@@ -5,12 +5,12 @@ import 'package:kfupm_app/features/home/presentation/anouncments/anouncments.dar
 import 'package:kfupm_app/features/home/presentation/home_page_appbar.dart';
 
 class HomeContent extends StatelessWidget{
-  
+  // the widget that  merge the sub components of homePage
   const HomeContent({super.key});
  
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     final devicesSizes=MediaQuery.of(context).size;
     return Container(
         height: devicesSizes.height,
@@ -24,7 +24,7 @@ class HomeContent extends StatelessWidget{
             height: Sizes.p8,
           ),
           SizedBox(
-            height: devicesSizes.height*1.2/3,
+            height: devicesSizes.height*1/4,
             child: Announcments()),
           const SizedBox(
             height: Sizes.p8,
