@@ -27,24 +27,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         child: ListView(
-        children: [
-          HomePageAppBar(),
-          SizedBox(
-            height: Sizes.p8,
-          ),
-          SizedBox(
-            height: deviceData.height*1.2/3,
-            child: Announcments()),
-          SizedBox(
-            height: Sizes.p8,
-          ),
-          IconWidget()
-        ],
-      ),
+          children: [
+            HomePageAppBar(),
+            SizedBox(
+              height: Sizes.p8,
+            ),
+            SizedBox(
+                height: deviceData.height * 1.2 / 3, child: Announcments()),
+            SizedBox(
+              height: Sizes.p8,
+            ),
+            IconWidget()
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
