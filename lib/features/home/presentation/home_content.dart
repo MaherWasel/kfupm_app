@@ -24,7 +24,7 @@ class HomeContent extends StatelessWidget{
             height: Sizes.p8,
           ),
           SizedBox(
-            height: devicesSizes.height*1.2/3,
+            height: devicesSizes.height*1/4,
             child: Announcments()),
           const SizedBox(
             height: Sizes.p8,
