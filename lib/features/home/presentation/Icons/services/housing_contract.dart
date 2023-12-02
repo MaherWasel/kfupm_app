@@ -20,7 +20,6 @@ class HousingContract extends StatelessWidget{
           }
           final housingContractUrl=snapshot.data!["housingContract"];
          
-         print(housingContractUrl);
           return Image.network(
             housingContractUrl,
             fit: BoxFit.fill,
