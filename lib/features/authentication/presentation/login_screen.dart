@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kfupm_app/features/authentication/presentation/form_field_widget.dart';
 import 'package:kfupm_app/features/home/presentation/home_screen.dart';
+import 'package:kfupm_app/features/attendance/attendance_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -60,8 +61,9 @@ class LoginScreen extends StatelessWidget {
                   width: deviceData.width * 0.4,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (contex){
-                        return const HomeScreen();
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (contex) {
+                        return const AttendanceScreen();
                       }));
                     },
                     style: ButtonStyle(
