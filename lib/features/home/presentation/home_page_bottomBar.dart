@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class HomePageBottomBar extends StatelessWidget {
   int index_ = 1;
-
-  HomePageBottomBar({super.key});
+  final Function controller;
+  HomePageBottomBar({required this.controller,super.key});
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
@@ -12,7 +12,9 @@ class HomePageBottomBar extends StatelessWidget {
       backgroundColor: Color.fromRGBO(14, 95, 50, 1),
 
       index: index_,
-      onTap: (index) {},
+      onTap: (index) {
+        controller(index);
+      },
       items: const <Widget>[
         Icon(
           Icons.settings,
