@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kfupm_app/features/constants/Sizes.dart';
 
 class FormFieldWidget extends StatelessWidget {
-  const FormFieldWidget({
+  FormFieldWidget({
     super.key,
     required this.labelText,
     required this.isEmail,
+    required this.saveText,
   });
-
+  final void Function(String enterdText) saveText;
   final String labelText;
   final bool isEmail;
 
@@ -14,20 +17,14 @@ class FormFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromRGBO(19, 128, 65, 1),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        labelText: labelText,
-        labelStyle: const TextStyle(
-          color: Color.fromARGB(255, 244, 241, 241),
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      style: const TextStyle(
-        color: Color.fromARGB(255, 244, 241, 241),
+          filled: true,
+          fillColor: Color.fromARGB(255, 147, 147, 147),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          labelText: labelText,
+          labelStyle: smallTextL),
+      style: GoogleFonts.lato(
         fontSize: 16,
       ),
       validator: isEmail
@@ -48,8 +45,12 @@ class FormFieldWidget extends StatelessWidget {
                 return null;
               }
             },
+      onSaved: (newValue) {
+        saveText(newValue!);
+      },
       textCapitalization: TextCapitalization.none,
       autocorrect: false,
+      obscureText: isEmail ? false : true,
     );
   }
 }

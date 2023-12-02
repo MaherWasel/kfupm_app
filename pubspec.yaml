@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: '>=3.1.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,10 +42,25 @@ dependencies:
   
   flutter_riverpod: 2.4.6
   google_fonts: ^6.1.0
+  firebase_auth: ^4.15.0
+  riverpod:
+  # the annotation package containing @riverpod
+  riverpod_annotation:
+  cloud_firestore: ^4.13.3
+  firebase_storage: ^11.5.3
+  page_transition: ^2.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # a tool for running code generators
+  build_runner:
+  # the code generator
+  riverpod_generator:
+  # riverpod_lint makes it easier to work with Riverpod
+  riverpod_lint:
+  # import custom_lint too as riverpod_lint depends on it
+  custom_lint:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,8 +81,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/KFUPM-Seal.png
+    - assets/logo.png
+    - assets/planer.png
+    - assets/lojo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
