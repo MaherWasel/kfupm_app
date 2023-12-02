@@ -11,11 +11,15 @@ class IdComponent extends StatelessWidget{
     final deviceSizes = MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 1, 58, 3)
+,
+      ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection("students").doc(FirebaseAuth.instance.currentUser!.uid).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState==ConnectionState.waiting){
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -29,8 +33,8 @@ class IdComponent extends StatelessWidget{
                 Container(
                   height: deviceSizes.height/3,
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 1, 58, 3),
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 1, 58, 3),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(35),
                       bottomRight: Radius.circular(35)),),
@@ -56,18 +60,37 @@ class IdComponent extends StatelessWidget{
                     color: Colors.white,
           
                   ),
-                  margin: EdgeInsets.all(Sizes.p16),
-                  padding: EdgeInsets.all(Sizes.p16),
+                  margin: const EdgeInsets.all(Sizes.p16),
+                  padding: const EdgeInsets.all(Sizes.p16),
                   child: Expanded(
                     child: Column(
                       children: [
-                        Text("college :"),
-                        Text(data["collage"]),
-                        Text("advisor"),
+                        Text("College : "+ data["collage"],
+                        style: midTextL.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500
+                        ),),
+                        SizedBox(height: Sizes.p12,),
+                        Text("Advisor : "+"Dr "+ data["advisor"],
+                        style: midTextL.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500
+                        )),
+                        SizedBox(height: Sizes.p12,),
+                        Text("level : "+ data["level"],
+                        style: midTextL.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500
+                        )),
+                        SizedBox(height: Sizes.p12,),
+                        Text("Major : "+ data["major"],
+                        style: midTextL.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500
+                        )),
 
-                        Text(data["advisor"]),
-                        Text("level"),
-                        Text(data["level"])
+
+                        
                       ],
                     )),
                 )
